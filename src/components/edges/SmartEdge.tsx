@@ -27,7 +27,7 @@ const SmartEdge = memo(function SmartEdge({
         deleteElements({ edges: [{ id }] });
     };
 
-    const isFiber = data?.type === 'fiber' || data?.type === 'Fiber';
+    const isFiber = data?.type === 'fiber';
     const cableColor = selected || isHovered ? '#fbbf24' : (isFiber ? '#a855f7' : '#64748b');
 
     return (

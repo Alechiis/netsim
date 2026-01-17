@@ -34,9 +34,6 @@
     "src"
   ],
   "exclude": [
-    "src/**/*BACKUP.ts",
-    "src/**/*BACKUP.tsx",
-    "src/types/networkbackup.ts",
     "src/tests/**/*"
   ],
   "references": [

@@ -16,7 +16,6 @@ import { lab15 } from './lab15_nat_server.js';
 import { lab16 } from './lab16_dhcp_relay.js';
 import { lab17 } from './lab17_stp_security.js';
 import { lab18 } from './lab18_lacp_tuning.js';
-import { lab19 } from './lab19_static_backup.js';
 import { lab20 } from './lab20_intermediate_challenge.js';
 import { lab21 } from './lab21_ospf_processes.js';
 import { lab22 } from './lab22_ospf_redistribution.js';
@@ -60,7 +59,6 @@ export const ALL_LABS = [
     lab16,
     lab17,
     lab18,
-    lab19,
     lab20,
     lab21,
     lab22,

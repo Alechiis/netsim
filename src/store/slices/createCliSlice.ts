@@ -12,6 +12,8 @@ import {
   CliVendorProfileId
 } from '../../utils/cliProfiles.js';
 import { getCliStrategy } from '../../plugins/cliParser.js';
+import { wasmExecuteCommand } from '../../wasm/wasmBridge';
+
 
 // Import refactored CLI modules
 import {
@@ -126,6 +128,57 @@ export const createCliSlice: StateCreator<any, [], [], CliSlice> = (set, get) =>
         // ALL commands are now handled via Command Pattern
         const history = get().sessionHistory[activeConsoleId] || [];
 
+        // Map TS view to Rust view format
+        const tsToRustViewMap: Record<string, string> = {
+          'user-view': 'userView',
+          'system-view': 'systemView',
+          'interface-view': 'interfaceView',
+          'bgp-view': 'bgpView',
+          'pool-view': 'poolView',
+        };
+        const currentTsView = currentDevice.cliState?.view || 'user-view';
+        const currentRustView = tsToRustViewMap[currentTsView] || 'userView';
+
+        // Try WASM execution first
+        const wasmResult = wasmExecuteCommand(activeConsoleId, cmdInput.trim(), currentRustView);
+
+        // Handle WASM result
+        if (wasmResult && wasmResult.success) {
+          get().addToHistory(activeConsoleId, cmdInput.trim());
+          set((state: any) => {
+            const devIndex = state.devices.findIndex((d: NetworkDevice) => d.id === activeConsoleId);
+            if (devIndex === -1) return state;
+
+            const newDev = { ...state.devices[devIndex] };
+            newDev.consoleLogs = [...newDev.consoleLogs, wasmResult.output];
+
+            // Handle view change
+            if (wasmResult.newView) {
+              // Map Rust view to TS view (roughly)
+              const viewMap: Record<string, string> = {
+                'userView': 'user-view',
+                'systemView': 'system-view',
+                'interfaceView': 'interface-view'
+              };
+              newDev.cliState = { ...newDev.cliState, view: (viewMap[wasmResult.newView] || newDev.cliState.view) as any };
+            }
+
+            // Handle hostname change - sync to UI
+            if (wasmResult.newHostname) {
+              newDev.hostname = wasmResult.newHostname;
+              // Also update the label for display
+              newDev.data = { ...newDev.data, label: wasmResult.newHostname };
+            }
+
+            const newDevices = [...state.devices];
+            newDevices[devIndex] = newDev;
+
+            return { ...state, devices: newDevices };
+          });
+          return;
+        }
+
+
         executeCliCommand(
           cmdInput.trim(),
           currentDevice,
@@ -137,11 +190,6 @@ export const createCliSlice: StateCreator<any, [], [], CliSlice> = (set, get) =>
         ).then(result => {
           // Add to history
           get().addToHistory(activeConsoleId, cmdInput.trim());
-
-          // Gamification: Add XP for command execution
-          // if (get().addXp) {
-          //   get().addXp(1, 'command');
-          // }
 
           set((state: any) => {
             const devIndex = state.devices.findIndex((d: NetworkDevice) => d.id === activeConsoleId);

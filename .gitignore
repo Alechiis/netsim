@@ -150,3 +150,7 @@ test-results/
 # Error Logs root
 *.log
 *.txt
+
+# Rust / WASM
+target/
+wasm-core/target/

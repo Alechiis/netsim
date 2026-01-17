@@ -73,7 +73,7 @@ export const buildLabTopology = (lab: Lab): { devices: NetworkDevice[]; cables: 
             const cableId = generateUUID();
             const cable: NetworkCable = {
                 id: cableId,
-                type: conn.type === 'fiber' ? 'Fiber' : 'Copper',
+                type: conn.type === 'fiber' ? 'fiber' : 'copper',
                 sourceDeviceId: dev1.id,
                 sourcePortId: port1.id,
                 targetDeviceId: dev2.id,

@@ -14,7 +14,7 @@ const NetworkCable = memo(function NetworkCable({
   const [hovered, setHovered] = useState(false);
   const [edgePath] = getBezierPath({ sourceX, sourceY, sourcePosition, targetX, targetY, targetPosition });
 
-  const isFiber = data?.type === 'Fiber';
+  const isFiber = data?.type === 'fiber';
   const isTrunk = data?.trunkId !== undefined;
 
   // Color palette - synced with design system

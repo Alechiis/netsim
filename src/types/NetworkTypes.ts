@@ -11,7 +11,7 @@ export type SwitchModel =
   | 'D-Link-DGS-1210' | 'D-Link-DGS-1510' | 'Aruba-2930F' | 'Aruba-5400R' | 'Aruba-CX-6300' | 'MikroTik-CRS326' | 'MikroTik-CCR2004'
   | 'Automation-Server';
 export type PortType = 'RJ45' | 'SFP' | 'Console';
-export type CableType = 'Copper' | 'Fiber';
+export type CableType = 'copper' | 'fiber';
 export type LinkStatus = 'up' | 'down';
 export type PortMode = 'access' | 'trunk' | 'hybrid' | 'routed';
 export type CliView =

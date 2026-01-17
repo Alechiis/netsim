@@ -6,6 +6,8 @@ import 'reactflow/dist/style.css';
 
 import { ProtectedRoute } from './components/auth/ProtectedRoute';
 import { useAuthStore } from './store/useAuthStore';
+import { useNetworkStore } from './store/useNetworkStore';
+import { wasmSetTopology } from './wasm/wasmBridge';
 
 // Lazy load route components for code splitting
 const App = lazy(() => import('./App.tsx'));
@@ -22,11 +24,22 @@ const PageLoader = () => (
   </div>
 );
 
+import { initWasm } from './wasm/wasmBridge';
+
 const RootHandlers = () => {
   const { initListener } = useAuthStore();
 
   useEffect(() => {
     initListener();
+    initWasm().then(() => {
+      const initialStore = useNetworkStore.getState();
+      wasmSetTopology(initialStore.devices, initialStore.cables);
+
+      // Subscribe to topology changes
+      useNetworkStore.subscribe((state) => {
+        wasmSetTopology(state.devices, state.cables);
+      });
+    }).catch(console.error);
 
     // Recovery for when OAuth redirects to root instead of /admin
     if (window.location.pathname === '/' && window.location.hash.includes('access_token') && localStorage.getItem('netsim-redirect-target') === 'admin') {

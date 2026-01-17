@@ -2,6 +2,8 @@ import { StateCreator } from 'zustand';
 import { NetworkDevice, NetworkCable, SwitchModel, NetworkPort, PortMode } from '../../types/NetworkTypes';
 import { generateUUID } from '../../utils/common';
 import { defaultDeviceCatalog } from '../../data/deviceCatalog';
+import { wasmSetTopology } from '../../wasm/wasmBridge';
+
 
 export const getSessionKey = (userId: string) => `netsim-topology-${userId}`;
 
@@ -243,8 +245,7 @@ export const createTopologySlice: StateCreator<any, [], [], TopologySlice> = (se
           sourcePortId: state.selectedPort!.portId,
           targetDeviceId: deviceId,
           targetPortId: portId,
-          type: sourcePort.type === 'SFP' ? 'fiber' : 'copper',
-          status: 'up'
+          type: sourcePort.type === 'SFP' ? 'fiber' : 'copper'
         });
         console.log('Cable added via Click-to-Connect:', cableId);
         set({ selectedPort: null }); // Clear selection after connecting
@@ -276,5 +277,10 @@ export const createTopologySlice: StateCreator<any, [], [], TopologySlice> = (se
 
   setTopology: (devices: NetworkDevice[], cables: NetworkCable[]) => {
     set({ devices, cables });
+    try {
+      wasmSetTopology(devices, cables);
+    } catch (e) {
+      console.warn('WASM sync failed (likely not initialized yet):', e);
+    }
   }
 });

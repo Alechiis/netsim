@@ -100,8 +100,7 @@ export default function SimulatorCanvas({
             sourcePortId: sPortId, // Use stripped ID
             targetDeviceId: target,
             targetPortId: tPortId, // Use stripped ID
-            type: sourcePort?.type === 'SFP' ? 'fiber' : 'copper',
-            status: 'up'
+            type: sourcePort?.type === 'SFP' ? 'fiber' : 'copper'
         });
         console.log('Cable added successfully:', cableId);
     }, [addCable, storeDevices]);
@@ -132,7 +131,7 @@ export default function SimulatorCanvas({
             }
 
             // Get position
-            const position = reactFlowInstance?.project({
+            const position = reactFlowInstance?.screenToFlowPosition({
                 x: event.clientX,
                 y: event.clientY,
             }) || { x: event.nativeEvent.offsetX, y: event.nativeEvent.offsetY };

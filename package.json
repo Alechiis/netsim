@@ -1,14 +1,14 @@
 {
-  "name": "network-simulator-mvp",
+  "name": "netsim-community-v1.1.0",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "proxy": "node ssh-proxy/server.js",
-    "build": "tsc && vite build",
+    "build:wasm": "wasm-pack build wasm-core --target web --out-dir ../src/wasm/pkg --no-typescript",
+    "build": "npm run build:wasm && tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "test:logic": "node scripts/run-tests.js",
     "export-config": "node scripts/publish-exports.js",
     "preview": "vite preview"
   },
