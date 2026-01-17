@@ -4,7 +4,6 @@
   <img src="public/logo.png" alt="NetSim Logo" width="120" />
   <h1>The Open Source Network Simulator</h1>
   
-  [![License](https://img.shields.io/github/license/netsim-labs/netsim?style=flat-square)](LICENSE)
   [![Version](https://img.shields.io/github/v/release/netsim-labs/netsim?style=flat-square&label=version)](https://github.com/netsim-labs/netsim/releases)
   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
   [![TypeScript](https://img.shields.io/badge/Written%20in-TypeScript-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
@@ -27,7 +26,19 @@
 
 Designed for students, engineers, and developers who want to understand networking protocols or build their own simulation tools using **React** and **WebAssembly**.
 
-![NetSim Dashboard](https://github.com/user-attachments/assets/99b207cc-20f9-483d-8206-1128e49c86d5)
+<div align="center">
+  <img src="docs/images/netsim-dashboard.png" alt="NetSim Dashboard" width="100%" style="border-radius: 8px; border: 1px solid #333;" />
+</div>
+
+## 👀 See It In Action
+
+Experience realistic CLI interactions, real-time topology visualization, and guided labs.
+
+<div align="center">
+  <img src="docs/images/netsim-lab-session.png" alt="NetSim Lab Session" width="100%" style="border-radius: 8px; border: 1px solid #333; margin-top: 10px; margin-bottom: 20px;" />
+</div>
+
+---
 
 ## ✨ Key Features
 
@@ -104,9 +115,21 @@ We welcome contributions from the community! Whether it's fixing a bug in the OS
 5. Open a Pull Request.
 
 ## 📄 License
-NetSim Community Edition is open source software licensed under the GNU Affero General Public License v3.0 (AGPL-3.0).
-- Free to use for personal and educational purposes.
-- Source code modification is allowed.
-- Commercial use typically requires a commercial license (contact us).
 
-Copyright © 2026 NetSim Labs. All rights reserved.
+Distributed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**.
+
+* Free for personal and educational use.
+* Commercial use typically requires a commercial license. Get in touch at **info@netsim.dev**.
+
+---
+
+<div align="center">
+  <p>
+    Made with ❤️ and <b>Data Packets</b> by the <strong>NetSim Labs Team</strong>
+  </p>
+  <p>
+    <small>Copyright © 2026 NetSim Labs. All rights reserved.</small>
+  </p>
+</div>
+  </p>
+</div>
