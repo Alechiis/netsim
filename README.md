@@ -3,7 +3,8 @@
 <div align="center">
   <img src="public/logo.png" alt="NetSim Logo" width="120" />
   <h1>The Open Source Network Simulator</h1>
-  
+
+  [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg?style=flat-square)](https://www.gnu.org/licenses/agpl-3.0)
   [![Version](https://img.shields.io/github/v/release/netsim-labs/netsim?style=flat-square&label=version)](https://github.com/netsim-labs/netsim/releases)
   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
   [![TypeScript](https://img.shields.io/badge/Written%20in-TypeScript-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
